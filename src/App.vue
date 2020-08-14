@@ -1,19 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <!-- <div id="app">
+    <upperHeader></upperHeader>
+  </div>-->
+  <section>
+    <div>
+      <header class="header trans_300" style="z-index: 999;">
+        <upperHeader />
+        <mainDashboard :showModal="(id) => showModal(id)" />
+        <modalView
+          id="exampleModal"
+          :showModal="(id) => showModal(id)"
+          :hideModal="(id) => hideModal(id)"
+        />
+      </header>
+    </div>
+  </section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import upperHeader from "./components/upperHeader.vue";
+import mainDashboard from "./components/main-dashboard.vue";
+import modalView from "./components/modal.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    upperHeader,
+    mainDashboard,
+    modalView,
+  },
+  methods: {},
+};
 </script>
 
 <style>
